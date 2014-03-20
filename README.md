@@ -13,6 +13,7 @@ Private URL Plugin for WordPress
 * Author URI: http://jamesclarke.info
 * License: GPL
 
+## Version info ##
 
 * Contributors: JamesClarke
 * Tags: posts, private
