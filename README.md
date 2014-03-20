@@ -23,7 +23,6 @@ Stable tag: 1.0.2
 This is original version, incompatible with Wordpress 3.8.1
 
 Planned refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
-Version: 2.0.0
 Author: Jeroen van Agt
 Author URI: https://github.com/jeroenvanagt 
 License: GPL
