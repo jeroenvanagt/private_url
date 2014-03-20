@@ -3,7 +3,7 @@ private_url
 
 Private URL Plugin for WordPress
 
-== Based on original plugin James Clarke ==
+### Based on original plugin James Clarke ###
 
 Plugin Name: Private URL
 Plugin URI: http://jamesclarke.info/projects/private-url
@@ -30,14 +30,14 @@ License: GPL
 
 Allows private posts to be shared through a special private url.
 
-== Description ==
+### Description ###
 
 Private URL is a plugin for sharing private posts through a special
 private url which is accessible without requiring readers to register or
 enter a password.  Private URLs have a structure similar to
 `/private/293/df8eb1583b052b59e2cafc4327214d0/`.
 
-== Installation ==
+### Installation ###
 
 1. Upload `private-url.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -46,7 +46,7 @@ enter a password.  Private URLs have a structure similar to
 1. Create and save a private post.  A new options panel called 'Private
    URL' will show the private url for the post.
 
-== Usage ==
+### Usage ###
 
 When you edit a private post a new options panel will become available
 called *Private URL*.  This provides the private url and a means for
