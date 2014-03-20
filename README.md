@@ -5,27 +5,27 @@ Private URL Plugin for WordPress
 
 ### Based on original plugin James Clarke ###
 
-Plugin Name: Private URL
-Plugin URI: http://jamesclarke.info/projects/private-url
-Description: Create publicly accessible URLs for your private posts
-Version: 1.0.2
-Author: James Clarke
-Author URI: http://jamesclarke.info
-License: GPL
+* Plugin Name: Private URL
+* Plugin URI: http://jamesclarke.info/projects/private-url
+* Description: Create publicly accessible URLs for your private posts
+* Version: 1.0.2
+* Author: James Clarke
+* Author URI: http://jamesclarke.info
+* License: GPL
 
 
-Contributors: JamesClarke
-Tags: posts, private
-Requires at least: 2.3.1
-Tested up to: 2.5
-Stable tag: 1.0.2
-
+* Contributors: JamesClarke
+* Tags: posts, private
+* Requires at least: 2.3.1
+* Tested up to: 2.5
+* Stable tag: 1.0.2
+ 
 This is original version, incompatible with Wordpress 3.8.1
 
-Planned refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
-Author: Jeroen van Agt
-Author URI: https://github.com/jeroenvanagt 
-License: GPL
+* Planned refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
+* Author: Jeroen van Agt
+* Author URI: https://github.com/jeroenvanagt 
+* License: GPL
 
 Allows private posts to be shared through a special private url.
 
@@ -39,10 +39,10 @@ enter a password.  Private URLs have a structure similar to
 ### Installation ###
 
 1. Upload `private-url.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Configure the plugin in the 'Private URL' menu under 'Settings' in
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Configure the plugin in the 'Private URL' menu under 'Settings' in
    WordPress.
-1. Create and save a private post.  A new options panel called 'Private
+4. Create and save a private post.  A new options panel called 'Private
    URL' will show the private url for the post.
 
 ### Usage ###
