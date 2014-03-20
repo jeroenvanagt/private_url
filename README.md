@@ -2,6 +2,7 @@ private_url
 ===========
 
 Private URL Plugin for WordPress
+
 Allows private posts to be shared through a special private url.
 
 ### Based on original plugin James Clarke ###
