@@ -8,7 +8,7 @@ Allows private posts to be shared through a special private url.
 * Plugin Name: Private URL
 * Plugin URI: https://github.com/jeroenvanagt/private_url
 * Description: Create publicly accessible URLs for your private posts
-* Version: 2.0.0
+* Version: 1.0.3
 * refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
 * Authors: James Clarke, Jeroen van Agt
 * Author URI: http://jamesclarke.info
@@ -21,7 +21,7 @@ Allows private posts to be shared through a special private url.
 * Tags: posts, private
 * Requires at least: 2.5
 * Tested up to: 3.8.1
-* Stable tag: 2.0.0
+* Stable tag: 1.0.3
 
 ### Description ###
 
