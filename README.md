@@ -5,32 +5,23 @@ Private URL Plugin for WordPress
 
 Allows private posts to be shared through a special private url.
 
-### Based on original plugin James Clarke ###
-
 * Plugin Name: Private URL
-* Plugin URI: http://jamesclarke.info/projects/private-url
+* Plugin URI: https://github.com/jeroenvanagt/private_url
 * Description: Create publicly accessible URLs for your private posts
-* Version: 1.0.2
-* Author: James Clarke
+* Version: 2.0.0
+* refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
+* Authors: James Clarke, Jeroen van Agt
 * Author URI: http://jamesclarke.info
+* Author URI: https://github.com/jeroenvanagt 
 * License: GPL
 
 ### Version info ###
 
-* Contributors: JamesClarke
+* Contributors: JamesClarke, Jeroen van Agt
 * Tags: posts, private
-* Requires at least: 2.3.1
-* Tested up to: 2.5
-* Stable tag: 1.0.2
- 
-This is original version, incompatible with Wordpress 3.8.1
-
-### Planned Refactoring ###
-
-* Planned refactoring by Jeroen van Agt to make the plugin compatible with Wordpress 3.8.1
-* Author: Jeroen van Agt
-* Author URI: https://github.com/jeroenvanagt 
-* License: GPL
+* Requires at least: 2.5
+* Tested up to: 3.8.1
+* Stable tag: 2.0.0
 
 ### Description ###
 
