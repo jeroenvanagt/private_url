@@ -42,7 +42,7 @@ class prvurl {
         add_filter('posts_where', array(&$this, 'posts_where'));
         add_action('template_redirect', array(&$this, 'template_redirect'));
         add_action('admin_menu', array(&$this, 'admin_menu'));
-        add_action('dbx_post_sidebar', array(&$this, 'dbx_post_sidebar'));
+        add_action('add_meta_boxes', array(&$this, 'private_url_add_meta_boxes'));
         add_action('save_post', array(&$this, 'save_post'));
         add_filter('posts_results', array(&$this, 'posts_results'));
         //setup some defaults incase we have no options
@@ -53,7 +53,7 @@ class prvurl {
         
         
     }    
-            
+
     function activate() {
         if (!get_option('prvurl_path'))
             add_option('prvurl_path', 'private', 'The path for private urls.', 'no');
@@ -62,6 +62,36 @@ class prvurl {
         return true;
     }
 
+    function private_url_add_meta_boxes($post_type){
+	global $post;
+        if ($post->post_status != 'private')
+            return true;
+	add_meta_box(
+	  'private_url_id', //Unique ID
+          __( 'Private Url'), //Title
+	  array(&$this,'private_url_meta_box'), //Callback function
+	  $post_type, // Admin page (or post type)
+	  'advanced', // Context
+      	  'default');
+    }
+
+    //Called during the edit form, outputs the private url frob part
+    function private_url_meta_box($post, $box ) {
+        $post_salt = get_post_meta($post->ID, $this->salt_key, true);
+        echo '<div id="prvurldiv" class="postbox if-js-closed">';
+        echo '  <div class="inside">';
+        if ($post_salt == '')
+            $salt = $this->salt;
+        else
+            $salt = $post_salt;
+        $data = $post->ID . $post->post_title;
+        $key = $this->generate_key($data, $salt);
+        $theurl = get_bloginfo('url') . '/'.$this->link_base.'/'.$post->ID.'/'.$key;
+        echo '<p>This post can be accessed public through <a href="'.$theurl.'">'.$theurl.'</a></p>';
+        echo '<p><input type="text" name="post_salt" size="18" value="'.$post_salt.'" /> </p><p>Change the post salt.</p>';
+        echo '<p>Setting or changing the post salt will result in a new private url being generated for this post. Save the post to see the new private url.</p>';
+        echo '</div></div>';
+    }
 
     //Required so our new rewrite rules are registered
     function flush_rewrite_rules() {
@@ -134,27 +164,6 @@ class prvurl {
         header('Pragma: no-cache');
     }    
 
-    //Called during the edit form, outputs the private url frob part
-    function dbx_post_sidebar() {
-        global $post;
-        $post_salt = get_post_meta($post->ID, $this->salt_key, true);
-        if ($post->post_status != 'private' and empty($post_salt))
-            return true;
-        echo '<div id="prvurldiv" class="postbox if-js-closed">';
-        echo '  <h3>Private URL</h3>';
-        echo '  <div class="inside">';
-        if ($post_salt == '')
-            $salt = $this->salt;
-        else
-            $salt = $post_salt;
-        $data = $post->ID . $post->post_title;
-        $key = $this->generate_key($data, $salt);
-        $theurl = get_bloginfo('url') . '/'.$this->link_base.'/'.$post->ID.'/'.$key;
-        echo '<p>This post can be accessed public through <a href="'.$theurl.'">'.$theurl.'</a></p>';
-        echo '<p><input type="text" name="post_salt" size="18" value="'.$post_salt.'" /> </p><p>Change the post salt.</p>';
-        echo '<p>Setting or changing the post salt will result in a new private url being generated for this post. Save the post to see the new private url.</p>';
-        echo '</div></div>';
-    }
 
     //Called when a post is saved, updates the post salt or deletes it
     function save_post($post_id) {
